@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle, CheckCircle, ArrowRight, Trash2, Recycle } from "lucide-react";
-import coconutWasteImage from "@/assets/realistic-coconut-waste-pollution.jpg";
+import wasteCollageImage from "@/assets/agricultural-waste-collage.png";
 
 const ProblemSolution = () => {
   return (
@@ -16,19 +16,19 @@ const ProblemSolution = () => {
           </p>
         </div>
 
-        {/* Environmental Impact Image */}
-        <div className="mb-16 relative">
+        {/* Agricultural Waste Collage */}
+        <div className="mb-16">
           <div className="relative rounded-2xl overflow-hidden shadow-elegant">
             <img 
-              src="/lovable-uploads/77eed569-1003-4b8e-a1ae-b45e7b54f946.png"
-              alt="Processing coconut husks for sustainable substrate production"
-              className="w-full h-64 md:h-80 object-cover"
+              src={wasteCollageImage}
+              alt="Agricultural waste materials - rice husks, coconut husks, cocoa pods, and corn ready for transformation"
+              className="w-full h-[400px] md:h-[500px] object-cover"
             />
-            
-            <div className="absolute bottom-6 left-6 text-white">
-              <p className="text-lg font-bold mb-2">Environmental Crisis</p>
-              <p className="text-sm opacity-90">Coconut waste dumped in Ghana's environment</p>
-            </div>
+          </div>
+          
+          <div className="mt-4 text-center">
+            <p className="text-lg font-bold text-foreground mb-2">Agricultural Waste Crisis</p>
+            <p className="text-sm text-muted-foreground">Rice husks, corn cobs, cocoa pods, and coconut husks dumped in the environment</p>
           </div>
         </div>
 
