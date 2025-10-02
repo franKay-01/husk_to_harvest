@@ -2,11 +2,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, GraduationCap, Users, Lightbulb, Target, BookOpen, Award } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import trainingImage from "@/assets/community-training.jpg";
 
 const MentorshipPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const programs = [
     {
       icon: GraduationCap,
@@ -102,7 +107,7 @@ const MentorshipPage = () => {
           <div className="container mx-auto px-4 lg:px-8">
             <Link to="/#products" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 mb-8">
               <ArrowLeft className="h-4 w-4" />
-              Back to Products
+              Back to What We Do
             </Link>
             
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -113,14 +118,6 @@ const MentorshipPage = () => {
                 <p className="text-xl text-muted-foreground mb-8">
                   Empowering the next generation of agricultural leaders, entrepreneurs, and sustainable farming advocates across Ghana.
                 </p>
-                <div className="flex flex-wrap gap-4">
-                  <Button variant="default" size="lg" className="bg-accent hover:bg-accent/90 text-white">
-                    Apply for Mentorship
-                  </Button>
-                  <Button variant="outline" size="lg">
-                    Become a Mentor
-                  </Button>
-                </div>
               </div>
               
               <div className="relative">
@@ -157,8 +154,7 @@ const MentorshipPage = () => {
                     
                     <div className="space-y-3">
                       <div className="bg-accent/10 p-3 rounded-lg">
-                        <div className="text-sm font-semibold text-accent mb-1">Duration: {program.duration}</div>
-                        <div className="text-xs text-muted-foreground">For: {program.participants}</div>
+                        <div className="text-sm font-semibold text-accent">For: {program.participants}</div>
                       </div>
                       
                       <div className="space-y-1">
@@ -240,25 +236,6 @@ const MentorshipPage = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-accent text-white text-center">
-          <div className="container mx-auto px-4 lg:px-8">
-            <h2 className="text-4xl font-black mb-6">
-              Start Your Growth Journey Today
-            </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Join our mentorship community and accelerate your success in sustainable agriculture.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button variant="secondary" size="lg">
-                Apply Now
-              </Button>
-              <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-accent" size="lg">
-                Learn More
-              </Button>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>

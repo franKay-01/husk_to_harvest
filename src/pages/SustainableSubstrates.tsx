@@ -2,16 +2,21 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, CheckCircle, Recycle, Leaf, Package } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WatermarkCleaner from "@/components/WatermarkCleaner";
-import substrateImage from "/lovable-uploads/8ecdf72a-3ab1-4e63-a215-fd847283e3e6.png";
+import substrateImage from "@/assets/substrate-blocks.png";
 import materialImage from "@/assets/substrate-materials.jpg";
 import fineSubstrate from "@/assets/packed-substrates-fine.jpg";
 import texturedSubstrate from "@/assets/packed-substrates-textured.jpg";
 import ultrafineSubstrate from "@/assets/packed-substrates-ultrafine.jpg";
 
 const SustainableSubstrates = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const benefits = [
     "Made from Agricultural Waste",
     "Nutrient-Rich Formula",
@@ -68,7 +73,7 @@ const SustainableSubstrates = () => {
           <div className="container mx-auto px-4 lg:px-8">
             <Link to="/#products" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 mb-8">
               <ArrowLeft className="h-4 w-4" />
-              Back to Products
+              Back to What We Do
             </Link>
             
             <div className="grid lg:grid-cols-2 gap-12 items-center">

@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send, Mail, Linkedin, Instagram, Twitter, Facebook } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSocial = () => {
   const [formData, setFormData] = useState({
@@ -12,14 +14,48 @@ const ContactSocial = () => {
     organization: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for contacting us. We'll get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        organization: "",
+        message: ""
+      });
+    } catch (error: any) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact us directly at info@mycogrid.co",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const socialLinks = [
@@ -50,12 +86,12 @@ const ContactSocial = () => {
 
             <div className="space-y-3 mb-8">
               <div className="text-muted-foreground">
-                <div className="font-semibold text-foreground">Ghana Office</div>
-                <div>+233 20 123 4567</div>
+                <div className="font-semibold text-foreground">Netherlands Office</div>
+                <div>+31 6 30337266</div>
               </div>
               <div className="text-muted-foreground">
-                <div className="font-semibold text-foreground">Netherlands Office</div>
-                <div>+31 6 1234 5678</div>
+                <div className="font-semibold text-foreground">Ghana Office</div>
+                <div>+233 243764733</div>
               </div>
             </div>
 
@@ -133,8 +169,14 @@ const ContactSocial = () => {
                     />
                   </div>
                   
-                  <Button type="submit" variant="growth" size="lg" className="w-full group">
-                    Send Message
+                  <Button 
+                    type="submit" 
+                    variant="growth" 
+                    size="lg" 
+                    className="w-full group" 
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
                     <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </form>

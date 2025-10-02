@@ -2,8 +2,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, GraduationCap, Lightbulb, Heart } from "lucide-react";
+import { useEffect } from "react";
 
 const OurStoryPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const founders = [
     {
       name: "Ebenezer Tuah",

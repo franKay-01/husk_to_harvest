@@ -11,6 +11,10 @@ const videos = [
   {
     src: "/videos/hero_2.mp4", 
     alt: "Mushroom cultivation process"
+  },
+  {
+    src: "/videos/mushroom-closeup.mp4",
+    alt: "Close-up of various mushroom types"
   }
 ];
 

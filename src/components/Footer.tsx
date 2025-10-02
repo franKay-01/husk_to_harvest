@@ -38,7 +38,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <img 
-                src="/mycogrid-logo.jpg" 
+                src="/mycogrid-logo-new.jpg" 
                 alt="MycoGrid logo" 
                 className="h-8 w-8"
               />

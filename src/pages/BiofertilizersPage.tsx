@@ -2,11 +2,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, CheckCircle, Leaf, Sprout, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import substrateImage from "@/assets/brown-substrate-bags.jpg";
 
 const BiofertilizersPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const benefits = [
     "100% Organic Composition",
     "Improves Soil Structure", 
@@ -66,7 +71,7 @@ const BiofertilizersPage = () => {
           <div className="container mx-auto px-4 lg:px-8">
             <Link to="/#products" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 mb-8">
               <ArrowLeft className="h-4 w-4" />
-              Back to Products
+              Back to What We Do
             </Link>
             
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -77,14 +82,6 @@ const BiofertilizersPage = () => {
                 <p className="text-xl text-muted-foreground mb-8">
                   Transform your soil with our organic bio-fertilizers made from composted agricultural waste and spent mushroom substrates.
                 </p>
-                <div className="flex flex-wrap gap-4">
-                  <Button variant="default" size="lg" className="bg-forest hover:bg-forest/90 text-white">
-                    Order Bio-fertilizers
-                  </Button>
-                  <Button variant="outline" size="lg">
-                    Request Soil Test
-                  </Button>
-                </div>
               </div>
               
               <div className="relative">
@@ -216,25 +213,6 @@ const BiofertilizersPage = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-forest text-white text-center">
-          <div className="container mx-auto px-4 lg:px-8">
-            <h2 className="text-4xl font-black mb-6">
-              Grow Sustainably with Bio-fertilizers
-            </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Join the organic farming revolution and improve your soil health naturally.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button variant="secondary" size="lg">
-                Get Custom Blend
-              </Button>
-              <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-forest" size="lg">
-                Bulk Order Inquiry
-              </Button>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>

@@ -9,28 +9,28 @@ const Header = () => {
   const navItems = [
     { name: "Home", href: "/", isRoute: true },
     { name: "Our Story", href: "/our-story", isRoute: true },
-    { name: "What we do", href: "#products", isRoute: false },
-    { name: "Impact", href: "#impact", isRoute: false },
-    { name: "Contact", href: "#contact", isRoute: false },
+    { name: "What we do", href: "/#products", isRoute: false },
+    { name: "Impact", href: "/#impact", isRoute: false },
+    { name: "Contact", href: "/#contact", isRoute: false },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-xl border-b border-border/50 shadow-soft">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-xl border-b border-border/50 shadow-soft">
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-18">
           {/* Enhanced Logo */}
           <div className="flex items-center space-x-3 group">
             <div className="relative">
               <img 
-                src="/logo.png" 
+                src="/mycogrid-logo-new.jpg" 
                 alt="MycoGrid logo" 
-                className="h-[3rem] w-[4rem] transition-transform duration-200 group-hover:scale-110"
+                className="h-10 w-10 transition-transform duration-200 group-hover:scale-110"
               />
               <div className="absolute inset-0 rounded-full bg-growth/20 scale-0 group-hover:scale-110 transition-transform duration-200"></div>
             </div>
-            {/* <span className="text-xl font-bold text-foreground tracking-tight">
+            <span className="text-xl font-bold text-foreground tracking-tight">
               MycoGrid
-            </span> */}
+            </span>
           </div>
 
           {/* Enhanced Desktop Navigation */}
