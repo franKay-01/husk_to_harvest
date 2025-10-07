@@ -90,7 +90,7 @@ const Hero = () => {
   }, [currentVideoIndex]);
 
   return (
-    <section className="relative h-[80vh] flex items-center overflow-hidden">
+    <section className="relative h-[70vh] sm:h-[75vh] md:h-[80vh] flex items-center overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0">
         {isLoading && (
@@ -110,15 +110,15 @@ const Hero = () => {
             loop={false}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-black/20"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-black/15 to-black/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/15 to-transparent"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 lg:px-8">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           {/* Enhanced headline with better typography */}
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-white leading-[0.85] mb-4 tracking-tight drop-shadow-2xl">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[0.85] mb-4 tracking-tight drop-shadow-2xl">
             TURNING
             <br />
             <span className="bg-gradient-to-r from-growth-glow to-earth-light bg-clip-text text-transparent drop-shadow-2xl" style={{WebkitTextStroke: '1px rgba(255,255,255,0.3)'}}>
@@ -131,20 +131,20 @@ const Hero = () => {
       </div>
 
       {/* Subtitle positioned at bottom left */}
-      <div className="absolute bottom-16 left-4 lg:left-8 z-20 max-w-lg">
-        <p className="text-sm md:text-base lg:text-lg text-white font-medium leading-relaxed drop-shadow-xl bg-black/20 backdrop-blur-sm rounded-lg p-3">
+      <div className="absolute bottom-20 sm:bottom-16 left-4 right-4 sm:left-6 sm:right-auto lg:left-8 z-20 max-w-lg">
+        <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white font-medium leading-relaxed drop-shadow-xl bg-black/20 backdrop-blur-sm rounded-lg p-3 sm:p-4">
           Transforming agricultural waste into premium sustainable mushrooms through innovative farming, fueling jobs, food security and climate action.
         </p>
       </div>
 
       {/* Video Navigation Dots */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex space-x-3">
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="flex space-x-2 sm:space-x-3">
           {videos.map((_, index) => (
             <button
               key={index}
               onClick={() => goToVideo(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                 index === currentVideoIndex 
                   ? 'bg-white scale-125 shadow-lg' 
                   : 'bg-white/50 hover:bg-white/70'

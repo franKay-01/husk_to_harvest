@@ -53,7 +53,7 @@ const Partnership = () => {
                 <Phone className="h-6 w-6 text-growth-glow mt-1" />
                 <div>
                   <div className="font-semibold">Call Us</div>
-                  <div className="text-white/80">+233 20 123 4567</div>
+                  <div className="text-white/80">+233 243764733</div>
                 </div>
               </div>
               

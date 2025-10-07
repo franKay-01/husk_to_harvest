@@ -40,6 +40,7 @@ const handler = async (req: Request): Promise<Response> => {
     const emailData = {
       from: "Contact Form <noreply@mycogrid.co>",
       to: ["info@mycogrid.co"],
+      reply_to: email,
       subject: `New Contact Form Message from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -48,7 +49,7 @@ const handler = async (req: Request): Promise<Response> => {
           <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="margin: 0 0 15px 0; color: #334155;">Contact Details</h3>
             <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Email:</strong> <a href="mailto:${email}" style="color: #2563eb;">${email}</a></p>
             ${organization ? `<p><strong>Organization:</strong> ${organization}</p>` : ''}
           </div>
           

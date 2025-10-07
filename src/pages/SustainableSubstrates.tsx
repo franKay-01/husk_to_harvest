@@ -90,11 +90,11 @@ const SustainableSubstrates = () => {
                 <WatermarkCleaner 
                   originalImagePath={substrateImage} 
                   alt="Sustainable mushroom substrates" 
-                  className="w-full h-96 object-cover rounded-lg shadow-elegant"
+                  className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-lg shadow-elegant"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-earth text-white p-4 rounded-lg shadow-medium">
-                  <div className="text-2xl font-black">100%</div>
-                  <div className="text-sm">Sustainable</div>
+                <div className="absolute -bottom-4 -right-4 bg-earth text-white p-3 sm:p-4 rounded-lg shadow-medium">
+                  <div className="text-xl sm:text-2xl font-black">100%</div>
+                  <div className="text-xs sm:text-sm">Sustainable</div>
                 </div>
               </div>
             </div>
@@ -133,7 +133,7 @@ const SustainableSubstrates = () => {
             <div className="grid lg:grid-cols-3 gap-8">
               {substrates.map((substrate, index) => (
                 <Card key={index} className="overflow-hidden hover:shadow-elegant transition-all duration-300 hover:-translate-y-2">
-                  <div className="h-48 overflow-hidden">
+                  <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                     <img 
                       src={substrate.image} 
                       alt={substrate.name}
@@ -189,7 +189,7 @@ const SustainableSubstrates = () => {
                 <img 
                   src={materialImage} 
                   alt="Raw substrate materials" 
-                  className="w-full h-96 object-cover rounded-lg shadow-elegant"
+                  className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-lg shadow-elegant"
                 />
               </div>
               
@@ -229,25 +229,6 @@ const SustainableSubstrates = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-earth text-white text-center">
-          <div className="container mx-auto px-4 lg:px-8">
-            <h2 className="text-4xl font-black mb-6">
-              Start Growing Today
-            </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Get premium substrates delivered to your farm and start your sustainable mushroom cultivation journey.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button variant="secondary" size="lg">
-                Request Quote
-              </Button>
-              <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-earth" size="lg">
-                Download Catalog
-              </Button>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>

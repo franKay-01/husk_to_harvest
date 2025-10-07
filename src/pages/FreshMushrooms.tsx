@@ -65,11 +65,11 @@ const FreshMushrooms = () => {
                 <img 
                   src={mushroomImage} 
                   alt="Fresh organic mushrooms" 
-                  className="w-full h-96 object-cover rounded-lg shadow-elegant"
+                  className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-lg shadow-elegant"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-growth text-white p-4 rounded-lg shadow-medium">
-                  <div className="text-2xl font-black">100%</div>
-                  <div className="text-sm">Organic</div>
+                <div className="absolute -bottom-4 -right-4 bg-growth text-white p-3 sm:p-4 rounded-lg shadow-medium">
+                  <div className="text-xl sm:text-2xl font-black">100%</div>
+                  <div className="text-xs sm:text-sm">Organic</div>
                 </div>
               </div>
             </div>
@@ -151,7 +151,7 @@ const FreshMushrooms = () => {
                 <img 
                   src={verticalFarmImage} 
                   alt="Vertical mushroom farming facility" 
-                  className="w-full h-96 object-cover rounded-lg shadow-elegant"
+                  className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-lg shadow-elegant"
                 />
               </div>
             </div>

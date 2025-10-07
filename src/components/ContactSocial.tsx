@@ -80,7 +80,7 @@ const ContactSocial = () => {
               <Mail className="h-6 w-6 text-growth" />
               <div>
                 <div className="font-semibold text-foreground">Email Us</div>
-                <div className="text-muted-foreground">info@mycogrid.com</div>
+                <div className="text-muted-foreground">info@mycogrid.co</div>
               </div>
             </div>
 

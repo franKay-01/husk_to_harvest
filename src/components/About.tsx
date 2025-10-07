@@ -41,7 +41,7 @@ const About = () => {
               <img
                 src="/lovable-uploads/6a718b75-69d7-4aec-824f-38590a5e7a6d.png"
                 alt="Hands holding rich, dark compost substrate material for mushroom farming"
-                className="w-full h-[600px] object-cover"
+                className="w-full h-64 sm:h-96 md:h-[500px] lg:h-[600px] object-contain"
               />
             </div>
           </div>

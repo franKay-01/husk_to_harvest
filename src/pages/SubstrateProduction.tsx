@@ -2,12 +2,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Factory, Recycle, CheckCircle, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import brownSubstrate from "@/assets/brown-substrate-bags.jpg";
 import labMicroscope from "@/assets/lab-microscope-coconut-fiber.jpg";
 
 const SubstrateProduction = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -16,10 +21,10 @@ const SubstrateProduction = () => {
         <section className="py-20 bg-gradient-earth">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center text-white mb-12">
-              <Link to="/" className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Home
-              </Link>
+            <Link to="/#products" className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to What we do
+            </Link>
               <h1 className="text-5xl md:text-7xl font-black mb-6">
                 Premium Substrate Production
               </h1>
@@ -38,7 +43,7 @@ const SubstrateProduction = () => {
                 <img
                   src={brownSubstrate}
                   alt="Brown substrate materials packed and ready for mushroom cultivation"
-                  className="w-full h-96 object-cover rounded-lg shadow-medium"
+                  className="w-full h-64 sm:h-80 md:h-96 object-contain rounded-lg shadow-medium"
                 />
               </div>
               <div>
@@ -203,7 +208,7 @@ const SubstrateProduction = () => {
                 <img
                   src={labMicroscope}
                   alt="Ultramodern laboratory with coconut husk fiber being examined under high-tech microscope for quality analysis"
-                  className="w-full h-96 object-cover rounded-lg shadow-medium"
+                  className="w-full h-64 sm:h-80 md:h-96 object-contain rounded-lg shadow-medium"
                 />
               </div>
             </div>
@@ -269,9 +274,9 @@ const SubstrateProduction = () => {
                     Partner With Us
                   </Button>
                 </Link>
-                <Link to="/">
+                <Link to="/#products">
                   <Button variant="outline" size="lg">
-                    Back to Solutions
+                    Back to What we do
                   </Button>
                 </Link>
               </div>

@@ -1,8 +1,53 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, GraduationCap, Lightbulb, Heart } from "lucide-react";
-import { useEffect } from "react";
+import { Users, GraduationCap, Lightbulb, Heart, ChevronDown } from "lucide-react";
+import { useEffect, useState } from "react";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { Button } from "@/components/ui/button";
+
+const FounderCard = ({ founder }: { founder: { name: string; role: string; description: string } }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const previewLength = 150;
+  const shouldTruncate = founder.description.length > previewLength;
+  const preview = shouldTruncate 
+    ? founder.description.substring(0, previewLength) + "..." 
+    : founder.description;
+
+  return (
+    <Card className="p-6 bg-muted/30 flex flex-col h-full">
+      <CardContent className="p-0 flex flex-col flex-1">
+        <h3 className="text-xl font-bold text-foreground mb-2">
+          {founder.name}
+        </h3>
+        <p className="text-growth font-semibold mb-3">
+          {founder.role}
+        </p>
+        <Collapsible open={isOpen} onOpenChange={setIsOpen} className="flex-1 flex flex-col">
+          <div className="text-muted-foreground mb-3">
+            {isOpen ? founder.description : preview}
+          </div>
+          {shouldTruncate && (
+            <CollapsibleTrigger asChild>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="w-full mt-auto group"
+              >
+                {isOpen ? "Read Less" : "Read More"}
+                <ChevronDown className={`ml-2 h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+              </Button>
+            </CollapsibleTrigger>
+          )}
+        </Collapsible>
+      </CardContent>
+    </Card>
+  );
+};
 
 const OurStoryPage = () => {
   useEffect(() => {
@@ -22,7 +67,7 @@ const OurStoryPage = () => {
     },
     {
       name: "Obeng Owusu",
-      role: "Chief Executive Officer", 
+      role: "Managing Partner (Operations)", 
       description: "An entrepreneur and strategist with over a decade of experience in building and scaling ventures across finance, digital platforms, and agritech. His career has been shaped by leading initiatives that mobilize capital for underserved communities, strengthen small businesses, and create inclusive pathways for growth. With a strong background in managing impact-driven funds and developing innovative business solutions, he brings a results-oriented approach to enterprise building. Obeng's expertise lies in combining financial acumen with sustainable development strategies, enabling him to design models that are both commercially viable and socially impactful. At MycoGrid, he is responsible for strategy, partnerships, and scaling operations, ensuring the enterprise delivers on its vision of transforming agricultural waste into wealth through circular economy innovation."
     }
   ];
@@ -132,19 +177,7 @@ const OurStoryPage = () => {
 
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                     {founders.map((founder, index) => (
-                      <Card key={founder.name} className="p-6 bg-muted/30">
-                        <CardContent className="p-0">
-                          <h3 className="text-xl font-bold text-foreground mb-2">
-                            {founder.name}
-                          </h3>
-                          <p className="text-growth font-semibold mb-3">
-                            {founder.role}
-                          </p>
-                          <p className="text-muted-foreground">
-                            {founder.description}
-                          </p>
-                        </CardContent>
-                      </Card>
+                      <FounderCard key={founder.name} founder={founder} />
                     ))}
                   </div>
                 </CardContent>

@@ -124,11 +124,11 @@ const MentorshipPage = () => {
                 <img 
                   src={trainingImage} 
                   alt="Mentorship and training session" 
-                  className="w-full h-96 object-cover rounded-lg shadow-elegant"
+                  className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-lg shadow-elegant"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-accent text-white p-4 rounded-lg shadow-medium">
-                  <div className="text-2xl font-black">500+</div>
-                  <div className="text-sm">Mentees</div>
+                <div className="absolute -bottom-4 -right-4 bg-accent text-white p-3 sm:p-4 rounded-lg shadow-medium">
+                  <div className="text-xl sm:text-2xl font-black">500+</div>
+                  <div className="text-xs sm:text-sm">Mentees</div>
                 </div>
               </div>
             </div>

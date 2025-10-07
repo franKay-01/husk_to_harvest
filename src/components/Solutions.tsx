@@ -21,7 +21,7 @@ const Solutions = () => {
                 <img
                   src="/lovable-uploads/77eed569-1003-4b8e-a1ae-b45e7b54f946.png"
                   alt="Processing coconut husks for sustainable substrate production"
-                  className="w-full h-80 object-cover rounded-lg"
+                  className="w-full h-64 sm:h-80 object-contain rounded-lg"
                 />
             </div>
             <div className="text-left">
@@ -69,7 +69,7 @@ const Solutions = () => {
               <img
                 src={mushroomsImage}
                 alt="Fresh mushrooms from sustainable farming"
-                className="w-full h-80 object-cover rounded-lg"
+                className="w-full h-64 sm:h-80 object-contain rounded-lg"
               />
             </div>
           </div>
@@ -79,7 +79,7 @@ const Solutions = () => {
               <img
                 src={communityImage}
                 alt="Community training session for mushroom farming with diverse group of learners"
-                className="w-full h-80 object-cover rounded-lg"
+                className="w-full h-64 sm:h-80 object-contain rounded-lg"
               />
             </div>
             <div className="text-left">

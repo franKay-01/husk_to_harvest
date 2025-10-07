@@ -36,10 +36,10 @@ const ProductsServices = () => {
   ];
 
   return (
-    <section id="products" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-black text-foreground mb-6">
+    <section id="products" className="py-12 sm:py-16 md:py-20 bg-muted/30">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-4 sm:mb-6">
             What we Do
           </h2>
         </div>

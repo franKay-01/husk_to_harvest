@@ -88,11 +88,11 @@ const BiofertilizersPage = () => {
                 <img 
                   src="/lovable-uploads/22bac8be-ab4c-4fc1-9829-fa25450ee2b0.png"
                   alt="Processing organic substrates for bio-fertilizer production"
-                  className="w-full h-96 object-cover rounded-lg shadow-elegant"
+                  className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-lg shadow-elegant"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-forest text-white p-4 rounded-lg shadow-medium">
-                  <div className="text-2xl font-black">Zero</div>
-                  <div className="text-sm">Chemicals</div>
+                <div className="absolute -bottom-4 -right-4 bg-forest text-white p-3 sm:p-4 rounded-lg shadow-medium">
+                  <div className="text-xl sm:text-2xl font-black">Zero</div>
+                  <div className="text-xs sm:text-sm">Chemicals</div>
                 </div>
               </div>
             </div>

@@ -2,11 +2,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Heart, Users, BookOpen, Sprout } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import communityImage from "@/assets/community-training.jpg";
 
 const CommunityOutreach = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -15,9 +20,9 @@ const CommunityOutreach = () => {
         <section className="py-20 bg-gradient-primary">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center text-white mb-12">
-              <Link to="/" className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors">
+              <Link to="/#products" className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors">
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Home
+                Back to What we do
               </Link>
               <h1 className="text-5xl md:text-7xl font-black mb-6">
                 Community Outreach & Training
@@ -37,7 +42,7 @@ const CommunityOutreach = () => {
                 <img
                   src={communityImage}
                   alt="Community training session with diverse group of participants learning mushroom farming"
-                  className="w-full h-96 object-cover rounded-lg shadow-medium"
+                  className="w-full h-64 sm:h-80 md:h-96 object-contain rounded-lg shadow-medium"
                 />
               </div>
               <div>
@@ -237,9 +242,9 @@ const CommunityOutreach = () => {
                     Get Involved
                   </Button>
                 </Link>
-                <Link to="/">
+                <Link to="/#products">
                   <Button variant="outline" size="lg">
-                    Back to Solutions
+                    Back to What we do
                   </Button>
                 </Link>
               </div>

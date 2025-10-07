@@ -2,11 +2,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Zap, Thermometer, Droplets, BarChart3, Cpu, Layers, TreePine } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import mushroomsImage from "@/assets/fresh-mushrooms.jpg";
 
 const MushroomProduction = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -15,9 +20,9 @@ const MushroomProduction = () => {
         <section className="py-20 bg-gradient-forest">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center text-white mb-12">
-              <Link to="/" className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors">
+              <Link to="/#products" className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors">
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Home
+                Back to What we do
               </Link>
               <h1 className="text-5xl md:text-7xl font-black mb-6">
                 Climate Smart Mushroom Production
@@ -66,7 +71,7 @@ const MushroomProduction = () => {
                 <img
                   src={mushroomsImage}
                   alt="High-tech vertical mushroom farm with hydroponic growing systems and climate control"
-                  className="w-full h-96 object-cover rounded-lg shadow-medium"
+                  className="w-full h-64 sm:h-80 md:h-96 object-contain rounded-lg shadow-medium"
                 />
               </div>
             </div>
@@ -209,9 +214,9 @@ const MushroomProduction = () => {
                     Explore Technology
                   </Button>
                 </Link>
-                <Link to="/">
+                <Link to="/#products">
                   <Button variant="outline" size="lg">
-                    Back to Solutions
+                    Back to What we do
                   </Button>
                 </Link>
               </div>
